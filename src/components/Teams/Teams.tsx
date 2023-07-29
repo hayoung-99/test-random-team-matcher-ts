@@ -2,17 +2,26 @@ import { useState } from 'react';
 import * as S from './Teams.style';
 import { shuffle } from 'lodash';
 import { makeTeams } from './Teams.helper';
+import { ISettingOption } from '@components/SettingBar/SettingBar.interface';
 
 interface IProps {
+  settingOptions: ISettingOption[];
   members: string[];
 }
 
-const Teams = ({ members }: IProps) => {
+const Teams = ({ settingOptions, members }: IProps) => {
   const [teams, setTeams] = useState<string[][]>([]);
 
   const handleClick = () => {
     const shuffledMembers = shuffle(members);
-    const totalTeamSize = 2;
+    let totalTeamSize = 2;
+
+    if (settingOptions[0].checked) {
+      totalTeamSize = settingOptions[0].value;
+    } else {
+      totalTeamSize = settingOptions[1].value;
+    }
+
     const teams = makeTeams(shuffledMembers, totalTeamSize);
 
     setTeams(teams);

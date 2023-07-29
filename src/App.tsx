@@ -19,7 +19,7 @@ function App() {
         </S.LNB>
         <S.Content>
           <SettingBar settingOptions={settingOptions} setSettingOptions={setSettingOptions} />
-          <Teams members={members} />
+          <Teams settingOptions={settingOptions} members={members} />
         </S.Content>
       </S.Layout>
     </>
