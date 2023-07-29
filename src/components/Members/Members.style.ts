@@ -27,7 +27,7 @@ export const EmptyMembers = styled.div`
 `;
 
 export const MemberWrapper = styled.li`
-  ${Mixin.flex('flex-start')};
+  ${Mixin.flex('space-between')};
   ${Mixin.shadow()};
   list-style: none;
   background-color: ${Color.primary};
@@ -38,6 +38,11 @@ export const MemberWrapper = styled.li`
 `;
 
 export const Member = styled.div``;
+
+export const DeleteBtn = styled.img`
+  width: 20px;
+  height: 20px;
+`;
 
 export const Form = styled.form`
   ${Mixin.flex('space-between')}
