@@ -1,5 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
 import * as S from './Members.style';
+import RemoveIcon from '@assets/image/ico_remove.png';
 
 interface IProps {
   members: string[];
@@ -28,6 +29,7 @@ const Members = ({ members, setMembers }: IProps) => {
           {members.map((member, index) => (
             <S.MemberWrapper key={index} data-member={member}>
               <S.Member>{member}</S.Member>
+              <S.DeleteBtn src={RemoveIcon} />
             </S.MemberWrapper>
           ))}
         </S.Members>
